@@ -1,0 +1,70 @@
+{
+  "name": "@zhenisbusy/create-file-structure-by-template",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./dist/commonjs/index.js",
+  "types": "./dist/commonjs/index.d.ts",
+  "tshy": {
+    "main": true,
+    "exports": {
+      "./package.json": "./package.json",
+      ".": "./src/index.ts"
+    }
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/index.d.ts",
+        "default": "./dist/commonjs/index.js"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "author": "zhenisbusy <zhenisbusy@qq.com> (https://zhenisbusy.space)",
+  "description": "A Node.js Script that creates a file structure useing string template.",
+  "license": "ISC",
+  "repository": {},
+  "scripts": {
+    "test": "node ./test/index.test.js",
+    "prepare": "tshy",
+    "format": "prettier --write . --log-level warn"
+  },
+  "keywords": [
+    "mkdir",
+    "mkfile",
+    "string template"
+  ],
+  "prettier": {
+    "experimentalTernaries": true,
+    "semi": false,
+    "printWidth": 80,
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "jsxSingleQuote": false,
+    "bracketSameLine": true,
+    "arrowParens": "avoid",
+    "endOfLine": "lf"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "prettier": "^3.2.5",
+    "ts-node": "^10.9.2",
+    "tshy": "^1.14.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "rimraf": "^5.0.7",
+    "rollup": "^4.18.0"
+  },
+  "engines": {
+    "node": ">=14.18"
+  }
+}

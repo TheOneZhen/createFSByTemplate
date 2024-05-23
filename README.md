@@ -1,0 +1,1 @@
+Create a file structure from a string template.
